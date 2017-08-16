@@ -31,10 +31,7 @@ public class MainActivity extends AppCompatActivity
         MenuListFragment menuListFragment =
                 (MenuListFragment) fm.findFragmentByTag(getString(R.string.menulistfragment));
         menuListFragment.addMenu(result);
-
-        FragmentTransaction transaction = fm.beginTransaction();
-        transaction.replace(R.id.content_panel, menuListFragment);
-        transaction.commit();
+        fm.popBackStack();
     }
 
     @Override
